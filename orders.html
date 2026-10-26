@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Create Order • LaundraFlow</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css">
+
+</head>
+
+
+<body>
+
+
+<aside class="sidebar">
+
+
+    <div class="brand">
+
+        Laundra<span>Flow</span>
+
+        <small>
+            LAUNDRY MANAGEMENT
+        </small>
+
+    </div>
+
+
+    <nav class="nav">
+
+
+        <a href="../index.html">
+
+            🏠 Dashboard
+
+        </a>
+
+
+        <a href="customers.html">
+
+            👥 Customers
+
+        </a>
+
+
+        <a
+            href="orders.html"
+            class="active">
+
+            🧺 Create Order
+
+        </a>
+
+
+        <a href="tracking.html">
+
+            📦 Tracking
+
+        </a>
+
+
+        <a href="billing.html">
+
+            🧾 Billing
+
+        </a>
+
+
+    </nav>
+
+
+    <div class="side-bottom">
+
+        <strong>
+            System
+        </strong>
+
+        <br>
+
+        HTML + CSS + Vanilla JavaScript
+
+        <br>
+
+        Java Servlet → JDBC → MySQL
+
+    </div>
+
+
+</aside>
+
+
+
+<main class="main">
+
+
+    <header class="topbar">
+
+        <div>
+
+            <p class="eyebrow">
+                LAUNDRY ORDER MANAGEMENT
+            </p>
+
+            <h1>
+                Create Order
+            </h1>
+
+            <p class="topbar-sub">
+                Create a new laundry order for a customer.
+            </p>
+
+        </div>
+
+    </header>
+
+
+
+    <section class="panel">
+
+
+        <h2>
+            🧺 New Laundry Order
+        </h2>
+
+
+        <p class="muted">
+            Select a customer and add garments.
+        </p>
+
+
+
+        <form id="orderForm">
+
+
+            <!-- CUSTOMER -->
+
+            <div class="form-group">
+
+                <label>
+                    👤 Customer
+                </label>
+
+
+                <select
+                    id="customerId"
+                    required>
+
+                    <option value="">
+                        Select Customer
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <br>
+
+
+
+            <!-- ITEMS -->
+
+            <h2>
+                Laundry Items
+            </h2>
+
+
+            <p class="muted">
+                Enter garment name manually.
+            </p>
+
+
+            <div id="orderItems"></div>
+
+
+
+            <br>
+
+
+
+            <button
+                type="button"
+                id="addItem"
+                class="btn secondary">
+
+                + Add Garment
+
+            </button>
+
+
+
+            <div class="order-summary">
+
+
+                <div>
+
+                    Delivery Charge:
+
+                    <strong>
+                        ₹50
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    Total Payable:
+
+                    <strong
+                        id="orderTotal">
+
+                        ₹50.00
+
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+
+            <br>
+
+
+
+            <button
+                type="submit"
+                class="btn gold">
+
+                ✓ Create Order
+
+            </button>
+
+
+            <button
+                type="reset"
+                class="btn secondary">
+
+                Clear
+
+            </button>
+
+
+        </form>
+
+
+    </section>
+
+
+</main>
+
+
+
+<div
+    id="toast"
+    class="toast">
+</div>
+
+
+
+<script src="../js/api.js"></script>
+
+<script src="../js/orders.js"></script>
+
+
+</body>
+
+</html>

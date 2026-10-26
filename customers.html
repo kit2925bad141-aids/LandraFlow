@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Customers • LaundraFlow</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css">
+
+</head>
+
+
+<body>
+
+
+<aside class="sidebar">
+
+    <div class="brand">
+
+        Laundra<span>Flow</span>
+
+        <small>
+            LAUNDRY MANAGEMENT
+        </small>
+
+    </div>
+
+
+    <nav class="nav">
+
+        <a href="../index.html">
+
+            🏠
+
+            <span>
+                Dashboard
+            </span>
+
+        </a>
+
+
+        <a
+            href="customers.html"
+            class="active">
+
+            👥
+
+            <span>
+                Customers
+            </span>
+
+        </a>
+
+
+        <a href="orders.html">
+
+            🧺
+
+            <span>
+                Create Order
+            </span>
+
+        </a>
+
+
+        <a href="tracking.html">
+
+            📦
+
+            <span>
+                Tracking
+            </span>
+
+        </a>
+
+
+        <a href="billing.html">
+
+            🧾
+
+            <span>
+                Billing
+            </span>
+
+        </a>
+
+    </nav>
+
+
+    <div class="side-bottom">
+
+        <strong>
+            System
+        </strong>
+
+        <br>
+
+        HTML + CSS + Vanilla JavaScript
+
+        <br>
+
+        Java Servlet → JDBC → MySQL
+
+    </div>
+
+</aside>
+
+
+
+<main class="main">
+
+
+    <header class="topbar">
+
+        <div>
+
+            <p class="eyebrow">
+                CUSTOMER MANAGEMENT
+            </p>
+
+            <h1>
+                Customers
+            </h1>
+
+            <p class="topbar-sub">
+                Register and manage laundry customers.
+            </p>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ADD CUSTOMER -->
+
+    <section class="panel">
+
+        <h2>
+            👤 Register Customer
+        </h2>
+
+        <p class="muted">
+            Add a new customer to the database.
+        </p>
+
+
+        <form id="customerForm">
+
+
+            <div class="form-grid">
+
+
+                <div class="form-group">
+
+                    <label>
+                        Customer Name
+                    </label>
+
+                    <input
+                        id="name"
+                        type="text"
+                        placeholder="Enter customer name"
+                        required>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+                        Phone
+                    </label>
+
+                    <input
+                        id="phone"
+                        type="text"
+                        placeholder="Enter phone number"
+                        required>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+                        Email
+                    </label>
+
+                    <input
+                        id="email"
+                        type="email"
+                        placeholder="Enter email">
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+                        Address
+                    </label>
+
+                    <input
+                        id="address"
+                        type="text"
+                        placeholder="Enter address">
+
+                </div>
+
+            </div>
+
+
+            <br>
+
+
+            <button
+                type="submit"
+                class="btn primary">
+
+                + Register Customer
+
+            </button>
+
+
+        </form>
+
+    </section>
+
+
+
+    <!-- CUSTOMER DATABASE -->
+
+    <section class="panel">
+
+        <div class="section-heading">
+
+            <div>
+
+                <p class="eyebrow">
+                    DATABASE
+                </p>
+
+                <h2>
+                    👥 Customer List
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="table-wrap">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            ID
+                        </th>
+
+                        <th>
+                            Name
+                        </th>
+
+                        <th>
+                            Phone
+                        </th>
+
+                        <th>
+                            Email
+                        </th>
+
+                        <th>
+                            Address
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="customerTable">
+
+                    <tr>
+
+                        <td colspan="5">
+
+                            Loading customers...
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+
+</main>
+
+
+<div
+    id="toast"
+    class="toast">
+</div>
+
+
+
+<script src="../js/api.js"></script>
+
+<script src="../js/customers.js"></script>
+
+
+</body>
+
+</html>

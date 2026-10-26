@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ================= LOGIN PROTECTION ================= -->
+    <script>
+        if (sessionStorage.getItem("managerLoggedIn") !== "true") {
+            window.location.href = "pages/login.html";
+        }
+    </script>
+
+    <title>LaundraFlow • Dashboard</title>
+
+    <!-- IMPORTANT: index.html is inside frontend -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            Laundra<span>Flow</span>
+            <small>LAUNDRY MANAGEMENT</small>
+        </div>
+
+        <nav class="nav">
+
+            <a href="index.html" class="active">
+                <span class="nav-icon">
+                    🏠
+                </span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="pages/customers.html">
+                <span class="nav-icon">
+                    👥
+                </span>
+                <span>Customers</span>
+            </a>
+
+            <a href="pages/orders.html">
+                <span class="nav-icon">
+                    🧺
+                </span>
+                <span>Create Order</span>
+            </a>
+
+            <a href="pages/tracking.html">
+                <span class="nav-icon">
+                    📦
+                </span>
+                <span>Tracking</span>
+            </a>
+
+            <a href="pages/billing.html">
+                <span class="nav-icon">
+                    🧾
+                </span>
+                <span>Billing</span>
+            </a>
+
+        </nav>
+
+        <div class="side-bottom">
+
+            <strong>System</strong>
+
+            <br>
+
+            HTML + CSS + Vanilla JavaScript
+
+            <br>
+
+            Java Servlet → JDBC → MySQL
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+        <!-- ================= TOP BAR ================= -->
+
+        <header class="topbar">
+
+            <p class="eyebrow">
+                LAUNDRAFLOW CONTROL CENTER
+            </p>
+
+            <h1>
+                Good morning 👋
+            </h1>
+
+            <p class="topbar-sub">
+                Keep every order moving smoothly from collection to delivery.
+            </p>
+
+        </header>
+
+
+        <!-- ================= HERO ================= -->
+
+        <section class="hero">
+
+            <p class="eyebrow">
+                SMART LAUNDRY OPERATIONS
+            </p>
+
+            <h2>
+                Simple orders.<br>
+                Clear tracking.
+            </h2>
+
+            <p>
+                Manage customers, laundry orders, status updates
+                and billing from one clean workspace.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="pages/orders.html" class="btn gold">
+                    ＋ Create New Order
+                </a>
+
+                <a href="pages/tracking.html" class="btn primary">
+                    📦 Track an Order
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= STAT CARDS ================= -->
+
+        <section class="stats-grid">
+
+
+            <!-- TOTAL ORDERS -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🧺
+                </div>
+
+                <h3>
+                    Total Orders
+                </h3>
+
+                <div
+                    class="value"
+                    id="totalOrders">
+                    0
+                </div>
+
+                <div class="description">
+                    All recorded orders
+                </div>
+
+            </div>
+
+
+            <!-- PROCESSING -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🫧
+                </div>
+
+                <h3>
+                    Processing
+                </h3>
+
+                <div
+                    class="value"
+                    id="processingOrders">
+                    0
+                </div>
+
+                <div class="description">
+                    Washing / Ironing in progress
+                </div>
+
+            </div>
+
+
+            <!-- READY -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ✓
+                </div>
+
+                <h3>
+                    Ready
+                </h3>
+
+                <div
+                    class="value"
+                    id="readyOrders">
+                    0
+                </div>
+
+                <div class="description">
+                    Ready for pickup
+                </div>
+
+            </div>
+
+
+            <!-- REVENUE -->
+
+            <div class="stat-card gold-card">
+
+                <div class="stat-icon">
+                    ₹
+                </div>
+
+                <h3>
+                    Total Revenue
+                </h3>
+
+                <div
+                    class="value"
+                    id="revenue">
+                    ₹0.00
+                </div>
+
+                <div class="description">
+                    Order totals recorded
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RECENT ORDERS ================= -->
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <p class="eyebrow">
+                        ORDER ACTIVITY
+                    </p>
+
+                    <h2>
+                        Recent Orders
+                    </h2>
+
+                </div>
+
+                <a
+                    href="pages/orders.html"
+                    class="btn primary">
+                    ＋ New Order
+                </a>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Order ID
+                            </th>
+
+                            <th>
+                                Customer ID
+                            </th>
+
+                            <th>
+                                Date
+                            </th>
+
+                            <th>
+                                Amount
+                            </th>
+
+                            <th>
+                                Payment
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="recentOrders">
+
+                        <tr>
+
+                            <td colspan="6">
+
+                                <div class="empty">
+                                    Loading orders...
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================= TOAST ================= -->
+
+    <div
+        id="toast"
+        class="toast">
+    </div>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="js/api.js"></script>
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

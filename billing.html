@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Billing • LaundraFlow</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css">
+
+</head>
+
+
+<body>
+
+
+<aside class="sidebar">
+
+
+    <div class="brand">
+
+        Laundra<span>Flow</span>
+
+        <small>
+            LAUNDRY MANAGEMENT
+        </small>
+
+    </div>
+
+
+    <nav class="nav">
+
+
+        <a href="../index.html">
+
+            🏠 Dashboard
+
+        </a>
+
+
+        <a href="customers.html">
+
+            👥 Customers
+
+        </a>
+
+
+        <a href="orders.html">
+
+            🧺 Create Order
+
+        </a>
+
+
+        <a href="tracking.html">
+
+            📦 Tracking
+
+        </a>
+
+
+        <a
+            href="billing.html"
+            class="active">
+
+            🧾 Billing
+
+        </a>
+
+
+    </nav>
+
+
+    <div class="side-bottom">
+
+        <strong>
+            System
+        </strong>
+
+        <br>
+
+        HTML + CSS + Vanilla JavaScript
+
+        <br>
+
+        Java Servlet → JDBC → MySQL
+
+    </div>
+
+
+</aside>
+
+
+
+<main class="main">
+
+
+    <header class="topbar">
+
+        <div>
+
+            <p class="eyebrow">
+                BILLING MANAGEMENT
+            </p>
+
+            <h1>
+                Billing & Invoice
+            </h1>
+
+            <p class="topbar-sub">
+                Generate and manage order payments.
+            </p>
+
+        </div>
+
+    </header>
+
+
+
+    <section class="panel">
+
+
+        <h2>
+            🧾 Find Invoice
+        </h2>
+
+
+        <p class="muted">
+            Enter an existing Order ID.
+        </p>
+
+
+        <form id="billingForm">
+
+
+            <div class="search-row">
+
+
+                <input
+                    id="billingOrderId"
+                    type="number"
+                    min="1"
+                    placeholder="Enter Order ID"
+                    required>
+
+
+                <button
+                    type="submit"
+                    class="btn primary">
+
+                    🔍 Find Invoice
+
+                </button>
+
+
+            </div>
+
+
+        </form>
+
+
+    </section>
+
+
+
+    <section class="panel">
+
+
+        <div id="billingResult">
+
+            <div class="empty">
+
+                Enter an Order ID to view the invoice.
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<div
+    id="toast"
+    class="toast">
+</div>
+
+
+
+<script src="../js/api.js"></script>
+
+<script src="../js/billing.js"></script>
+
+
+</body>
+
+</html>

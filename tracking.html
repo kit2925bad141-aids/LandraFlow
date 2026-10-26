@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Tracking • LaundraFlow</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css">
+
+</head>
+
+
+<body>
+
+
+<aside class="sidebar">
+
+
+    <div class="brand">
+
+        Laundra<span>Flow</span>
+
+        <small>
+            LAUNDRY MANAGEMENT
+        </small>
+
+    </div>
+
+
+
+    <nav class="nav">
+
+
+        <a href="../index.html">
+
+            <span class="nav-icon">
+                🏠
+            </span>
+
+            <span>
+                Dashboard
+            </span>
+
+        </a>
+
+
+        <a href="customers.html">
+
+            <span class="nav-icon">
+                👥
+            </span>
+
+            <span>
+                Customers
+            </span>
+
+        </a>
+
+
+        <a href="orders.html">
+
+            <span class="nav-icon">
+                🧺
+            </span>
+
+            <span>
+                Create Order
+            </span>
+
+        </a>
+
+
+        <a href="tracking.html" class="active">
+
+            <span class="nav-icon">
+                📦
+            </span>
+
+            <span>
+                Tracking
+            </span>
+
+        </a>
+
+
+        <a href="billing.html">
+
+            <span class="nav-icon">
+                🧾
+            </span>
+
+            <span>
+                Billing
+            </span>
+
+        </a>
+
+
+    </nav>
+
+
+
+    <div class="side-bottom">
+
+        <strong>
+            System
+        </strong>
+
+        <br>
+
+        HTML + CSS + Vanilla JavaScript
+
+        <br>
+
+        Java Servlet → JDBC → MySQL
+
+    </div>
+
+
+</aside>
+
+
+
+<main class="main">
+
+
+    <header class="topbar">
+
+        <p class="eyebrow">
+            ORDER TRACKING
+        </p>
+
+        <h1>
+            Track an Order 📦
+        </h1>
+
+        <p class="topbar-sub">
+            Follow the current status stored by the backend.
+        </p>
+
+    </header>
+
+
+
+    <!-- SEARCH -->
+
+    <section class="panel">
+
+
+        <form id="trackingForm">
+
+
+            <div class="search-row">
+
+
+                <input
+                    id="trackingOrderId"
+                    type="number"
+                    placeholder="Enter Order ID"
+                    required>
+
+
+                <button
+                    type="submit"
+                    class="btn primary">
+
+                    🔍 Find Order
+
+                </button>
+
+
+            </div>
+
+
+        </form>
+
+
+
+        <div id="trackingResult">
+
+            <div class="empty">
+
+                Enter an order ID to view its progress.
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- STATUS UPDATE -->
+
+    <section class="panel">
+
+
+        <div class="panel-header">
+
+            <div>
+
+                <p class="eyebrow">
+                    ORDER STATUS
+                </p>
+
+                <h2>
+                    Update Order Status
+                </h2>
+
+            </div>
+
+        </div>
+
+
+
+        <form id="statusForm">
+
+
+            <div class="form-group">
+
+
+                <label for="status">
+                    New Status
+                </label>
+
+
+                <select id="status" required>
+
+
+                    <option value="Collected">
+                        Collected
+                    </option>
+
+
+                    <option value="Washing">
+                        Washing
+                    </option>
+
+
+                    <option value="Ironing">
+                        Ironing
+                    </option>
+
+
+                    <option value="Ready">
+                        Ready
+                    </option>
+
+
+                    <option value="Delivered">
+                        Delivered
+                    </option>
+
+
+                </select>
+
+
+            </div>
+
+
+            <br>
+
+
+            <button
+                type="submit"
+                class="btn gold">
+
+                ✓ Update Status
+
+            </button>
+
+
+        </form>
+
+
+    </section>
+
+
+</main>
+
+
+
+<div
+    id="toast"
+    class="toast">
+</div>
+
+
+
+<script src="../js/api.js"></script>
+
+<script src="../js/tracking.js"></script>
+
+
+</body>
+
+</html>
